@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Song" format=3 uid="uid://bckpyvf4nvt3y"]
+
+[ext_resource type="PackedScene" uid="uid://c8q71ol6da28r" path="res://emitter_shotgun.tscn" id="1_5777o"]
+[ext_resource type="Texture2D" uid="uid://bw4pdxjnj8h6f" path="res://image_shotgun.png" id="1_m6ycv"]
+[ext_resource type="Script" uid="uid://skkdy81o8lfx" path="res://song.gd" id="1_ukvpe"]
+[ext_resource type="AudioStream" uid="uid://dwfddqtx7kc37" path="res://shotgun.wav" id="4_5777o"]
+
+[resource]
+resource_name = "Shotgun"
+script = ExtResource("1_ukvpe")
+stream = ExtResource("4_5777o")
+measure_length = 2.0
+beats = Array[float]([0.5, 1.75])
+loop_end = 64.0
+image = ExtResource("1_m6ycv")
+emitter = ExtResource("1_5777o")
+metadata/_custom_type_script = "uid://skkdy81o8lfx"

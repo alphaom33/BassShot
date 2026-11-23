@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c8q71ol6da28r"]
+
+[ext_resource type="Script" uid="uid://ec6g4nqrtrsu" path="res://emitter_shotgun.gd" id="1_j2aes"]
+[ext_resource type="PackedScene" uid="uid://b34tc0pl6yqhm" path="res://shotgun_bullet.tscn" id="2_nlobt"]
+[ext_resource type="AudioStream" uid="uid://dwfddqtx7kc37" path="res://shotgun.wav" id="2_rvk16"]
+
+[node name="EmitterShotgun" type="Node2D" unique_id=1319256258]
+script = ExtResource("1_j2aes")
+bullet = ExtResource("2_nlobt")
+
+[node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=1622069669]
+stream = ExtResource("2_rvk16")
+volume_db = -12.0

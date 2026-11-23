@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Song" format=3 uid="uid://m3w3rx62wy2d"]
+
+[ext_resource type="Script" uid="uid://skkdy81o8lfx" path="res://song.gd" id="1_q31uc"]
+[ext_resource type="PackedScene" uid="uid://db2fu3ehrnxbs" path="res://bullet.tscn" id="1_xikrx"]
+[ext_resource type="Texture2D" uid="uid://xjaelrndqigc" path="res://image_gatling.png" id="2_kbnhm"]
+[ext_resource type="AudioStream" uid="uid://ceo5y1jbm46q7" path="res://goodnevelyn.wav" id="3_kbnhm"]
+
+[resource]
+resource_name = "Guard"
+script = ExtResource("1_q31uc")
+stream = ExtResource("3_kbnhm")
+measure_length = 2.0
+beats = Array[float]([0.0, 1.5])
+loop_end = 38.0
+bullet = ExtResource("1_xikrx")
+image = ExtResource("2_kbnhm")
+metadata/_custom_type_script = "uid://skkdy81o8lfx"

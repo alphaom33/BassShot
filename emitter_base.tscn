@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cjblc2ybm7iqt"]
+
+[ext_resource type="Script" uid="uid://dge6725u2xnm5" path="res://emitter_base.gd" id="1_0mbx7"]
+[ext_resource type="PackedScene" uid="uid://db2fu3ehrnxbs" path="res://bullet.tscn" id="2_7ab8c"]
+[ext_resource type="AudioStream" uid="uid://c0wn1ukcm1edb" path="res://shoot.wav" id="3_7ab8c"]
+
+[node name="EmitterBase" type="Node2D" unique_id=530432376]
+script = ExtResource("1_0mbx7")
+bullet = ExtResource("2_7ab8c")
+
+[node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=237104212]
+stream = ExtResource("3_7ab8c")
+volume_db = -16.0

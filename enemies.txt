@@ -1,0 +1,16 @@
+idiot:
+worm
+just goes toward you
+
+shoot:
+snake
+just goes toward you
+also shoots sometimes
+
+shield:
+oidunno alien thing maybe
+also just goes toward you um
+
+charge:
+crystal maybe
+charges every couple seconds

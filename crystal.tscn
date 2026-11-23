@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bfu1shfp0wprc"]
+
+[ext_resource type="Script" uid="uid://hx1o3cxpy5js" path="res://crystal.gd" id="1_kxb6e"]
+[ext_resource type="Texture2D" uid="uid://c4t35ovuwjedh" path="res://crystal.png" id="2_gxs1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmoc2"]
+size = Vector2(60, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8x7k"]
+size = Vector2(77, 156)
+
+[sub_resource type="Gradient" id="Gradient_oe4af"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i0nxa"]
+gradient = SubResource("Gradient_oe4af")
+width = 1
+
+[node name="Crystal" type="RigidBody2D" unique_id=2067468298 groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 0.0
+freeze_mode = 1
+script = ExtResource("1_kxb6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1362073605 groups=["Enemy"]]
+texture_filter = 1
+scale = Vector2(7, 7)
+texture = ExtResource("2_gxs1y")
+
+[node name="HurtArea" type="Area2D" parent="." unique_id=1258262682 groups=["Enemy", "Hurt"]]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtArea" unique_id=416028409 groups=["Enemy", "Hurt"]]
+position = Vector2(-1, 19.5)
+shape = SubResource("RectangleShape2D_nmoc2")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=448610743 groups=["Enemy"]]
+position = Vector2(0.5, 15)
+shape = SubResource("RectangleShape2D_c8x7k")
+
+[node name="Indicator" type="Sprite2D" parent="." unique_id=819422779]
+visible = false
+self_modulate = Color(1, 1, 1, 0.46666667)
+show_behind_parent = true
+position = Vector2(0, -9909)
+scale = Vector2(84, 20000)
+texture = SubResource("GradientTexture1D_i0nxa")

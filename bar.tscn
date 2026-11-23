@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dqvg6dri3ychi"]
+
+[ext_resource type="Texture2D" uid="uid://xekxut8yqk7n" path="res://bar.png" id="1_sbg6f"]
+[ext_resource type="Script" uid="uid://cy1lj0lt5qt8j" path="res://bar.gd" id="2_sbg6f"]
+
+[node name="Bar" type="Sprite2D" unique_id=396594042]
+self_modulate = Color(3.2944162, 3.2944162, 3.2944162, 1)
+scale = Vector2(7, 7)
+texture = ExtResource("1_sbg6f")
+script = ExtResource("2_sbg6f")

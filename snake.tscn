@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b1xhugaqlvsav"]
+
+[ext_resource type="Script" uid="uid://c46t4vnjstqb8" path="res://snake.gd" id="1_gxkgb"]
+[ext_resource type="Texture2D" uid="uid://chdl8o6p4yfce" path="res://snake.png" id="2_2x2sd"]
+[ext_resource type="PackedScene" uid="uid://c472fu1pgqvy2" path="res://venom.tscn" id="2_olj5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olj5u"]
+size = Vector2(119, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw1s1"]
+size = Vector2(18, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej4wj"]
+size = Vector2(155, 191)
+
+[node name="Snake" type="RigidBody2D" unique_id=1180493885 groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 0.0
+freeze_mode = 1
+script = ExtResource("1_gxkgb")
+venom = ExtResource("2_olj5u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=894170736]
+scale = Vector2(7, 7)
+texture = ExtResource("2_2x2sd")
+
+[node name="HurtArea" type="Area2D" parent="." unique_id=541406688 groups=["Enemy", "Hurt"]]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtArea" unique_id=1810746877 groups=["Enemy", "Hurt"]]
+position = Vector2(0.5, 21)
+shape = SubResource("RectangleShape2D_olj5u")
+
+[node name="Hurtbox2" type="CollisionShape2D" parent="HurtArea" unique_id=116635271 groups=["Enemy", "Hurt"]]
+position = Vector2(-52, -54)
+shape = SubResource("RectangleShape2D_dw1s1")
+
+[node name="Hurtbox3" type="CollisionShape2D" parent="HurtArea" unique_id=2094983672 groups=["Enemy", "Hurt"]]
+position = Vector2(52, -54)
+shape = SubResource("RectangleShape2D_dw1s1")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1308887898 groups=["Enemy"]]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_ej4wj")
+
+[node name="ShootSpot" type="Node2D" parent="." unique_id=629533625]
+position = Vector2(0, -49)

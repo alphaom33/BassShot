@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://n0lylrj0mr0y"]
+
+[ext_resource type="Texture2D" uid="uid://d1mw6s3qqkh8t" path="res://back_background.png" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://d1kk03wkip73l" path="res://button.gd" id="2_ouk20"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0nxa"]
+line_spacing = 0.0
+paragraph_spacing = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0nxa"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
+bg_color = Color(0.4, 0.4, 0.4, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
+bg_color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="Menu" type="Node2D" unique_id=827228621]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1179189396]
+position = Vector2(189, 145.5)
+scale = Vector2(1.0555556, 1.0851852)
+texture = ExtResource("1_lti8b")
+
+[node name="Label" type="Label" parent="." unique_id=647497773]
+custom_maximum_size = Vector2(350, -1)
+offset_top = -2.0
+offset_right = 350.0
+offset_bottom = 270.0
+size_flags_horizontal = 0
+text = "You've encountered difficulty on your deep-space mission in the form of alien attackers.
+Unfortunately, your gun is on the fritz, and can only be shot when bass from your built-in radio jogs it into action
+Good luck, and don't fall into the black hole.
+- W to boost
+- A/D to turn
+- Mouse to Shoot
+- Numbers to Change Station"
+label_settings = SubResource("LabelSettings_i0nxa")
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=312034471]
+offset_left = 204.0
+offset_top = 197.0
+offset_right = 349.0
+offset_bottom = 228.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_i0nxa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ouk20")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lti8b")
+text = "Start"
+script = ExtResource("2_ouk20")

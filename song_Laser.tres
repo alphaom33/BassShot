@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Song" format=3 uid="uid://7d8fgtifco5o"]
+
+[ext_resource type="Script" uid="uid://skkdy81o8lfx" path="res://song.gd" id="1_2276o"]
+[ext_resource type="PackedScene" uid="uid://deues56slkpak" path="res://emitter_laser.tscn" id="1_dger1"]
+[ext_resource type="Texture2D" uid="uid://b0mvn3todnuh4" path="res://image_laser.png" id="2_dger1"]
+[ext_resource type="AudioStream" uid="uid://badaefroqgmq2" path="res://laser_song.wav" id="4_dger1"]
+
+[resource]
+resource_name = "Laser"
+script = ExtResource("1_2276o")
+stream = ExtResource("4_dger1")
+measure_length = 2.0
+beats = Array[float]([0.0, 1.0, 1.165, 1.33])
+loop_end = 32.23
+image = ExtResource("2_dger1")
+emitter = ExtResource("1_dger1")
+metadata/_custom_type_script = "uid://skkdy81o8lfx"

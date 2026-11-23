@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Song" format=3 uid="uid://bank886h3t5o3"]
+
+[ext_resource type="PackedScene" uid="uid://bjm487b076te4" path="res://emitter_gatling.tscn" id="1_6boub"]
+[ext_resource type="Script" uid="uid://skkdy81o8lfx" path="res://song.gd" id="1_erbi6"]
+[ext_resource type="Texture2D" uid="uid://xjaelrndqigc" path="res://image_gatling.png" id="2_6boub"]
+[ext_resource type="AudioStream" uid="uid://c70wuomcewhe5" path="res://house.wav" id="4_6boub"]
+
+[resource]
+resource_name = "Gatling"
+script = ExtResource("1_erbi6")
+stream = ExtResource("4_6boub")
+measure_length = 2.0
+beats = Array[float]([0.0, 0.5, 1.0, 1.5])
+loop_end = 38.0
+image = ExtResource("2_6boub")
+emitter = ExtResource("1_6boub")
+metadata/_custom_type_script = "uid://skkdy81o8lfx"

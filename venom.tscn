@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c472fu1pgqvy2"]
+
+[ext_resource type="Script" uid="uid://bmvfe2730dne4" path="res://venom.gd" id="1_yj4sh"]
+[ext_resource type="Texture2D" uid="uid://d3agk8wpyx2rq" path="res://venom.png" id="2_rx70s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0nxa"]
+size = Vector2(27, 34)
+
+[node name="Venom" type="Area2D" unique_id=1501265313]
+script = ExtResource("1_yj4sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=834215604]
+position = Vector2(-3.5, 0)
+scale = Vector2(7, 7)
+texture = ExtResource("2_rx70s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=410380519]
+position = Vector2(0.5, -7)
+shape = SubResource("RectangleShape2D_i0nxa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

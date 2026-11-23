@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Song" format=3 uid="uid://clh82ap4b6sey"]
+
+[ext_resource type="PackedScene" uid="uid://cjblc2ybm7iqt" path="res://emitter_base.tscn" id="1_3cy35"]
+[ext_resource type="Script" uid="uid://skkdy81o8lfx" path="res://song.gd" id="2_3cy35"]
+[ext_resource type="Texture2D" uid="uid://cbg6qw6inshyr" path="res://image_base.png" id="2_d8viq"]
+[ext_resource type="AudioStream" uid="uid://psvuo6rwxiy6" path="res://base.wav" id="4_3cy35"]
+
+[resource]
+resource_name = "Base"
+script = ExtResource("2_3cy35")
+stream = ExtResource("4_3cy35")
+measure_length = 2.0
+beats = Array[float]([0.0, 1.0])
+loop_end = 64.0
+image = ExtResource("2_d8viq")
+emitter = ExtResource("1_3cy35")
+metadata/_custom_type_script = "uid://skkdy81o8lfx"

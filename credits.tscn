@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://bcknifcx7xbnp"]
+
+[ext_resource type="Script" uid="uid://dw31ulmgm5wl4" path="res://credits.gd" id="1_g4wvt"]
+[ext_resource type="Texture2D" uid="uid://d1mw6s3qqkh8t" path="res://back_background.png" id="2_pjc1l"]
+[ext_resource type="Texture2D" uid="uid://c6p08pvj51ogl" path="res://plane.png" id="3_j6beo"]
+[ext_resource type="AudioStream" uid="uid://cecyie0k6lbe5" path="res://zoom.wav" id="4_4av4j"]
+[ext_resource type="Texture2D" uid="uid://dngwwedytaeyl" path="res://plane_superzoom.png" id="5_5em78"]
+[ext_resource type="Script" uid="uid://f4n8umjs2iue" path="res://fire.gd" id="6_h30m1"]
+[ext_resource type="Texture2D" uid="uid://gxl3jgoeuqtt" path="res://background.png" id="7_r4875"]
+[ext_resource type="Script" uid="uid://4uu83jdhrthh" path="res://background.gd" id="8_g735x"]
+[ext_resource type="Texture2D" uid="uid://d21oi5mutaecx" path="res://background_top.png" id="9_lnt0k"]
+[ext_resource type="Texture2D" uid="uid://ilfdv3vd1l1j" path="res://background_top_top.png" id="10_604bw"]
+[ext_resource type="Script" uid="uid://bxdceh3hp8m06" path="res://creditor.gd" id="11_g735x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0nxa"]
+line_spacing = -20.0
+paragraph_spacing = 300.0
+font_size = 100
+
+[node name="Credits" type="Node2D" unique_id=679908818]
+script = ExtResource("1_g4wvt")
+
+[node name="Blacker" type="Sprite2D" parent="." unique_id=1698863409]
+z_index = 50
+position = Vector2(6.000183, -8.500074)
+scale = Vector2(7.055556, 7.2629614)
+texture = ExtResource("2_pjc1l")
+
+[node name="Plane" type="Sprite2D" parent="." unique_id=2050853937]
+position = Vector2(0, 1066)
+scale = Vector2(7, 7)
+texture = ExtResource("3_j6beo")
+
+[node name="Zoom" type="AudioStreamPlayer" parent="Plane" unique_id=1224411552]
+stream = ExtResource("4_4av4j")
+volume_db = -20.0
+autoplay = true
+
+[node name="LeftFire" type="Sprite2D" parent="Plane" unique_id=516957001]
+self_modulate = Color(5.735, 5.735, 5.735, 1)
+position = Vector2(-6, 0)
+texture = ExtResource("5_5em78")
+script = ExtResource("6_h30m1")
+
+[node name="RightFire" type="Sprite2D" parent="Plane" unique_id=1577227113]
+self_modulate = Color(5.735, 5.735, 5.735, 1)
+position = Vector2(6, 0)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_5em78")
+script = ExtResource("6_h30m1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1467641792]
+zoom = Vector2(0.15, 0.15)
+
+[node name="BackBackground" type="Sprite2D" parent="." unique_id=1248141205]
+z_index = -4
+texture_repeat = 2
+position = Vector2(-40, -2275)
+scale = Vector2(7, 7)
+texture = ExtResource("2_pjc1l")
+region_enabled = true
+region_rect = Rect2(0, 0.6, 1440, 1080)
+
+[node name="Background" type="Sprite2D" parent="." unique_id=140502469]
+z_index = -2
+texture_repeat = 2
+position = Vector2(0, -945)
+scale = Vector2(7, 7)
+texture = ExtResource("7_r4875")
+region_enabled = true
+region_rect = Rect2(0, 0.6, 360, 540)
+script = ExtResource("8_g735x")
+speed = 2000
+
+[node name="BackgroundTop" type="Sprite2D" parent="." unique_id=1956951462]
+z_index = -2
+texture_repeat = 2
+position = Vector2(0, -945)
+scale = Vector2(7, 7)
+texture = ExtResource("9_lnt0k")
+region_enabled = true
+region_rect = Rect2(0, 0.6, 360, 540)
+script = ExtResource("8_g735x")
+speed = 1800
+
+[node name="BackgroundTopTop" type="Sprite2D" parent="." unique_id=402920519]
+z_index = -2
+texture_repeat = 2
+position = Vector2(0, -945)
+scale = Vector2(7, 7)
+texture = ExtResource("10_604bw")
+region_enabled = true
+region_rect = Rect2(0, 0.6, 360, 540)
+script = ExtResource("8_g735x")
+speed = 1620
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1864157448]
+position = Vector2(704, 508)
+
+[node name="Credits" type="Node2D" parent="." unique_id=2112467095]
+position = Vector2(0, 1022)
+script = ExtResource("11_g735x")
+
+[node name="Credits" type="Label" parent="Credits" unique_id=1250376907]
+offset_left = -1000.0
+offset_top = -64.0
+offset_right = 1.0
+offset_bottom = 913.0
+text = "Programming
+Sound Design
+Game Design
+Creature Design
+UI Design
+Music
+Background Reference Image
+Engine"
+label_settings = SubResource("LabelSettings_i0nxa")
+autowrap_mode = 2
+
+[node name="Credits2" type="Label" parent="Credits" unique_id=1496400663]
+offset_top = -64.0
+offset_right = 1000.0
+offset_bottom = 73.0
+text = "Me
+Also Me
+Yep It's Me
+Mhm Me
+Wow Me
+Me Again
+James Webb First Deep Field
+Godot You Doofus"
+label_settings = SubResource("LabelSettings_i0nxa")
+horizontal_alignment = 2
+autowrap_mode = 2

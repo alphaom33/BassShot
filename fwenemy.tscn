@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dxi15gsilgra8"]
+
+[ext_resource type="Script" uid="uid://dikdci03olrw" path="res://enemy.gd" id="1_3ebr6"]
+[ext_resource type="Texture2D" uid="uid://yayx8wl2jn2r" path="res://fworm.png" id="2_3ebr6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7k104"]
+friction = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(119, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
+size = Vector2(155, 163)
+
+[node name="Fwenemy" type="RigidBody2D" unique_id=741937111 groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 4
+physics_material_override = SubResource("PhysicsMaterial_7k104")
+gravity_scale = 0.0
+freeze_mode = 1
+max_contacts_reported = 200
+linear_damp_mode = 1
+script = ExtResource("1_3ebr6")
+max_velocity = 300
+score = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=312624925 groups=["Enemy"]]
+texture_filter = 1
+scale = Vector2(7, 7)
+texture = ExtResource("2_3ebr6")
+
+[node name="HurtArea" type="Area2D" parent="." unique_id=541406688 groups=["Enemy", "Hurt"]]
+
+[node name="Hurtbox" type="CollisionShape2D" parent="HurtArea" unique_id=1810746877 groups=["Enemy", "Hurt"]]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="Hitbox" type="CollisionShape2D" parent="." unique_id=1308887898 groups=["Enemy"]]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_qi2p4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

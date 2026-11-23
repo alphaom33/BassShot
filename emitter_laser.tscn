@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://deues56slkpak"]
+
+[ext_resource type="Script" uid="uid://bstimcwgnhpqk" path="res://emitter_laser.gd" id="1_4hd8g"]
+[ext_resource type="AudioStream" uid="uid://dgcm4thu55tye" path="res://laser.wav" id="2_ihwes"]
+[ext_resource type="AudioStream" uid="uid://yshiujyte1nf" path="res://shoot_laser.wav" id="3_ihwes"]
+
+[sub_resource type="Gradient" id="Gradient_codbj"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i30he"]
+gradient = SubResource("Gradient_codbj")
+width = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0nxa"]
+size = Vector2(7, 7)
+
+[node name="EmitterLaser" type="Area2D" unique_id=752770761]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_4hd8g")
+
+[node name="Laser" type="Sprite2D" parent="." unique_id=1039387]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -700)
+scale = Vector2(7, 1400)
+texture = SubResource("GradientTexture1D_i30he")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1495023089]
+stream = ExtResource("2_ihwes")
+pitch_scale = 1.3
+autoplay = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=558184830]
+position = Vector2(0, -700)
+scale = Vector2(1, 200)
+shape = SubResource("RectangleShape2D_i0nxa")
+disabled = true
+
+[node name="ShootPlayer" type="AudioStreamPlayer" parent="." unique_id=910326209]
+stream = ExtResource("3_ihwes")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

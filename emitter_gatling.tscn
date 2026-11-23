@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bjm487b076te4"]
+
+[ext_resource type="Script" uid="uid://dge6725u2xnm5" path="res://emitter_base.gd" id="1_0isvr"]
+[ext_resource type="PackedScene" uid="uid://db2fu3ehrnxbs" path="res://bullet.tscn" id="2_wobvv"]
+[ext_resource type="AudioStream" uid="uid://c0wn1ukcm1edb" path="res://shoot.wav" id="3_wobvv"]
+
+[node name="EmitterGatling" type="Node2D" unique_id=1644243364]
+script = ExtResource("1_0isvr")
+bullet = ExtResource("2_wobvv")
+
+[node name="Shoot" type="AudioStreamPlayer" parent="." unique_id=222911989]
+stream = ExtResource("3_wobvv")
+volume_db = -16.0
